@@ -1,0 +1,45 @@
+// c# program to show the working of
+// the non-abstract method in the abstract class
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Non_Abstract
+{
+    abstract class AbstractClass
+    {
+        // Non abstract method
+        public int AddTwoNumbers(int Num1, int Num2)
+        {
+            return Num1 + Num2;
+        }
+        // An abstract method which 
+        // overridden in the derived class
+        public abstract int MultiplyTwoNumbers(int Num1, int Num2);
+
+
+    }
+    // child Class of AbstractClass
+    class Derived : AbstractClass
+    {
+        // implementing the abstract
+        // method 'MultiplyTwoNumbers'
+        // using override Keyword,using override keyword,
+        public override int MultiplyTwoNumbers(int Num1, int Num2)
+        {
+            return Num1 * Num2;
+        }
+    }
+    // Driver Class
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Instance of the derived class
+            Derived d = new Derived();
+            Console.WriteLine("Assition : {0}\nMultiplication : {1}", d.AddTwoNumbers(4, 6), d.MultiplyTwoNumbers(6, 4));
+        }
+    }
+}
